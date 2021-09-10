@@ -11,38 +11,38 @@ import org.slf4j.LoggerFactory;
 public class PaginationSteps {
 	int count;
 	Logger logger = LoggerFactory.getLogger(PaginationSteps.class);
-	@Given("Use the List of Content pagination and Number of Item each page")
-	public void useTheListOfContentPaginationAndNumberOfItemEachPage(DataTable dataTable) {
-		count = Integer.parseInt(dataTable.asLists().get(1).get(1));
-		PaginationHelperTest.setList(dataTable.asLists().get(1).get(0));
+
+	@Given("Use the {string} pagination and {string}")
+	public void useThePaginationAnd(String content, String pageNum) {
+		count = Integer.parseInt(pageNum);
+		PaginationHelperTest.setList(content);
 		PaginationHelperTest.getStringList();
 
 	}
 
-	@Then("Get the Item Count")
-	public void getTheItemCount() {
+	@Then("Get the Item Count and compare with expected {string}")
+	public void getTheItemCountAndCompareWithExpected(String itemCount) {
 		logger.info("==== Items are counting ====...");
 		PaginationHelperTest.setHelper(new PaginationHelper(PaginationHelperTest.getStringList(), count));
-		new PaginationHelperTest().getItemCount();
-
+		new PaginationHelperTest().getItemCount(Integer.parseInt(itemCount));
 	}
 
-	@Then("Get the Page Count")
-	public void getThePageCount() {
+	@Then("Get the Page Count and compare with expected {string}")
+	public void getThePageCountAndCompareWithExpected(String pageCount) {
 		logger.info("==== Getting the Page count ====...");
-		new PaginationHelperTest().getPageCount();
+		new PaginationHelperTest().getPageCount(Integer.parseInt(pageCount));
 	}
 
-	@Then("Get the Page Item Count")
-	public void getPageTheItemCount() {
+	@Then("Get the Page Item Count and compare with Expected Result")
+	public void getTheAndCompareWith(DataTable dataTable) {
 		logger.info("==== Getting page item count ====...");
-		new PaginationHelperTest().getPageItemCount();
+		new PaginationHelperTest().getPageItemCount(dataTable);
 	}
 
-	@Then("Get the Page Index")
-	public void getThePageIndex() {
+	@Then("Get the Page Index> and compare the Expected Page Index")
+	public void getTheAndCompareThe(DataTable dataTable) {
 		logger.info("==== Getting page index ====...");
-		new PaginationHelperTest().getPageIndex();
-	}
+		new PaginationHelperTest().getPageIndex(dataTable);
 
+	}
 }

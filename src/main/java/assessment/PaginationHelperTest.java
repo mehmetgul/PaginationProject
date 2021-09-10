@@ -1,13 +1,13 @@
 package assessment;
 
 
-
-import java.util.ArrayList;
-import java.util.List;
-
+import io.cucumber.datatable.DataTable;
 import org.junit.Assert;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class PaginationHelperTest {
@@ -15,19 +15,15 @@ public class PaginationHelperTest {
     public static PaginationHelper helper;
     public static String list;
 
-
     public static String getList() {
         return list;
     }
-
     public static void setList(String list) {
         PaginationHelperTest.list = list;
     }
-
     public static PaginationHelper getHelper() {
         return helper;
     }
-
     public static void setHelper(PaginationHelper helper) {
         PaginationHelperTest.helper = helper;
     }
@@ -49,9 +45,9 @@ public class PaginationHelperTest {
      *Getting the list count
      * Step 2
      */
-    public void getItemCount() {
-        logger.info("Number of count {} ",getHelper().itemCount());
-        Assert.assertEquals(6,getHelper().itemCount());
+    public void getItemCount(int itemCount) {
+        logger.info("Number of count is {} and expected count is {} ",getHelper().itemCount(),itemCount);
+        Assert.assertEquals(itemCount,getHelper().itemCount());
         logger.info("Assertion successful");
     }
 
@@ -59,9 +55,9 @@ public class PaginationHelperTest {
      * Counting the number of page
      * Step 3
      */
-    public void getPageCount() {
-        logger.info("Number of page count {}",getHelper().pageCount());
-        Assert.assertEquals(2,getHelper().pageCount());
+    public void getPageCount(int pageCount) {
+        logger.info("Number of page count is {} and expected page count is {}",getHelper().pageCount(),pageCount);
+        Assert.assertEquals(pageCount,getHelper().pageCount());
         logger.info("Assertion successful");
     }
 
@@ -69,13 +65,12 @@ public class PaginationHelperTest {
      * Calculating the number of items in each page
      * Step 4
      */
-    public void getPageItemCount() {
-        logger.info("Page Item Count for {} is {}",0,getHelper().pageItemCount(0));
-        logger.info("Page Item Count for {} is {}",1, getHelper().pageItemCount(1));
-        logger.info("Page Item Count for {} is {}",2, getHelper().pageItemCount(2));
-        Assert.assertEquals(4,getHelper().pageItemCount(0));
-        Assert.assertEquals(2,getHelper().pageItemCount(1));
-        Assert.assertEquals(-1,getHelper().pageItemCount(2));
+    public void getPageItemCount(DataTable dataTable) {
+        List<List<String>> rows= dataTable.asLists(String.class);
+        for(int i=1;i<rows.size();i++){
+            logger.info("Page Item Count for {} is {}",rows.get(i).get(0),getHelper().pageItemCount(Integer.parseInt(rows.get(i).get(0))));
+            Assert.assertEquals(Integer.parseInt(rows.get(i).get(1)),getHelper().pageItemCount(Integer.parseInt(rows.get(i).get(0))));
+        }
         logger.info("Assertion successful");
     }
 
@@ -83,17 +78,14 @@ public class PaginationHelperTest {
      * Finding the item location based on index
      * Step 5
      */
-    public void getPageIndex() {
-
-        logger.info("Page item idex {} and the returned page is {}",5,getHelper().pageIndex(5));
-        logger.info("Page item idex {} and the returned page is {}",2,getHelper().pageIndex(2));
-        logger.info("Page item idex {} and the returned page is {}",20,getHelper().pageIndex(20));
-        logger.info("Page item idex {} and the returned page is {}",-10,getHelper().pageIndex(-10));
-        Assert.assertEquals(1,getHelper().pageIndex(5));
-        Assert.assertEquals(0,getHelper().pageIndex(2));
-        Assert.assertEquals(-1,getHelper().pageIndex(20));
-        Assert.assertEquals(-1,getHelper().pageIndex(-10));
+    public void getPageIndex(DataTable dataTable) {
+        List<List<String>> rows= dataTable.asLists(String.class);
+        for(int i=1;i<rows.size();i++){
+            logger.info("Page Item Index for {} is {}",rows.get(i).get(0),getHelper().pageIndex(Integer.parseInt(rows.get(i).get(0))));
+            Assert.assertEquals(Integer.parseInt(rows.get(i).get(1)),getHelper().pageIndex(Integer.parseInt(rows.get(i).get(0))));
+        }
         logger.info("Assertion successful");
+
 
     }
 

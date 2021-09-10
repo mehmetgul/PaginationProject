@@ -42,7 +42,7 @@ $(document).ready(function() {
 
 
   
-<title>Cucumber Reports (no 1) - Feature: Verify the pagination</title>
+<title>Cucumber Reports (no 1) - Feature: Verify the Pagination Helper Implementation</title>
 
 </head>
 <body>
@@ -75,9 +75,9 @@ $(document).ready(function() {
   </thead>
   <tbody>
     <tr class="info">
-      <td>AutoTraders.com Smoke Test</td>
+      <td>Pagination Helper Unit Test Results</td>
               <td>1</td>
-            <td>09 Sep 2021, 21:25</td>
+            <td>10 Sep 2021, 14:36</td>
     </tr>
   </tbody>
 </table>
@@ -129,19 +129,19 @@ $(document).ready(function() {
 
         <tbody>
         <tr>
-          <td class="tagname">Verify the pagination</td>
-                    <td      class="passed"    >5</td>
+          <td class="tagname">Verify the Pagination Helper Implementation</td>
+                    <td      class="passed"    >10</td>
           <td >0</td>
           <td >0</td>
           <td >0</td>
           <td >0</td>
-          <td class="total">5</td>
+          <td class="total">10</td>
 
-          <td  class="passed"    >1</td>
+          <td  class="passed"    >2</td>
           <td >0</td>
-          <td class="total">1</td>
+          <td class="total">2</td>
 
-          <td class="duration" data-value="81531000">081ms</td>
+          <td class="duration" data-value="51579000">051ms</td>
           <td class="passed">Passed</td>
         </tr>
         </tbody>
@@ -176,7 +176,7 @@ $(document).ready(function() {
         
 <div class="brief passed">
   <span class="keyword indention">Feature</span>
-  <span class="name">Verify the pagination</span>
+  <span class="name">Verify the Pagination Helper Implementation</span>
   
 
   </div>
@@ -192,14 +192,14 @@ $(document).ready(function() {
   </div>
 
   
-  <span class="lead-duration duration">081ms</span>
+  <span class="lead-duration duration">047ms</span>
 
 
     <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-1">
     
 <div class="brief passed">
-  <span class="keyword indention">Scenario</span>
-  <span class="name">Verify the pagination function as expected</span>
+  <span class="keyword indention">Scenario Outline</span>
+  <span class="name">Verify the pagination function as expected (alternate scenario)1</span>
   
 
        <i class="chevron fa fa-fw"></i>
@@ -231,9 +231,72 @@ $(document).ready(function() {
         
 <div class="brief passed">
   <span class="keyword indention">Given</span>
-  <span class="name">Use the List of Content pagination and Number of Item each page</span>
+  <span class="name">Use the &quot;abcdef&quot; pagination and &quot;4&quot;</span>
   
-  <span class="lead-duration duration">073ms</span>
+  <span class="lead-duration duration">041ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">Get the Item Count and compare with expected &quot;6&quot;</span>
+  
+  <span class="lead-duration duration">004ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">Get the Page Count and compare with expected &quot;2&quot;</span>
+  
+  <span class="lead-duration duration">000ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">Get the Page Item Count and compare with Expected Result</span>
+  
+  <span class="lead-duration duration">001ms</span>
 
   </div>
 
@@ -242,12 +305,20 @@ $(document).ready(function() {
 
                   <table class="step-arguments">
                           <tr>
-                                  <td>List of Content</td>
-                                  <td>Number of Item each page</td>
+                                  <td>Page Item Count</td>
+                                  <td>Expected Result</td>
                               </tr>
                           <tr>
-                                  <td>abcdef</td>
+                                  <td>0</td>
                                   <td>4</td>
+                              </tr>
+                          <tr>
+                                  <td>1</td>
+                                  <td>2</td>
+                              </tr>
+                          <tr>
+                                  <td>2</td>
+                                  <td>-1</td>
                               </tr>
                       </table>
         
@@ -262,15 +333,37 @@ $(document).ready(function() {
         
 <div class="brief passed">
   <span class="keyword indention">Then</span>
-  <span class="name">Get the Item Count</span>
+  <span class="name">Get the Page Index&gt; and compare the Expected Page Index</span>
   
-  <span class="lead-duration duration">005ms</span>
+  <span class="lead-duration duration">001ms</span>
 
   </div>
 
         
 
 
+                  <table class="step-arguments">
+                          <tr>
+                                  <td>Page Index</td>
+                                  <td>Expected Page Index</td>
+                              </tr>
+                          <tr>
+                                  <td>5</td>
+                                  <td>1</td>
+                              </tr>
+                          <tr>
+                                  <td>2</td>
+                                  <td>0</td>
+                              </tr>
+                          <tr>
+                                  <td>20</td>
+                                  <td>-1</td>
+                              </tr>
+                          <tr>
+                                  <td>-10</td>
+                                  <td>-1</td>
+                              </tr>
+                      </table>
         
         
 
@@ -279,11 +372,63 @@ $(document).ready(function() {
         
   
       </div>
+      </div>
+</div>
+
+
+    
+
+  </div>
+</div>
+
+                      
+<div class="element">
+  
+  
+<div class="tags indention">
+  </div>
+
+  
+  <span class="lead-duration duration">003ms</span>
+
+
+    <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-3">
+    
+<div class="brief passed">
+  <span class="keyword indention">Scenario Outline</span>
+  <span class="name">Verify the pagination function as expected (alternate scenario)</span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-3" class="collapse collapsable-details ">
+    
+
+
+    
+<div class="steps inner-level">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-4">
+    
+<div class="brief passed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </div>
+
+  <div id="steps-4" class="inner-level collapse collapsable-details ">
           <div class="step">
         
 <div class="brief passed">
-  <span class="keyword indention">Then</span>
-  <span class="name">Get the Page Count</span>
+  <span class="keyword indention">Given</span>
+  <span class="name">Use the &quot;abcdefghiklmnd&quot; pagination and &quot;3&quot;</span>
   
   <span class="lead-duration duration">000ms</span>
 
@@ -304,7 +449,7 @@ $(document).ready(function() {
         
 <div class="brief passed">
   <span class="keyword indention">Then</span>
-  <span class="name">Get the Page Item Count</span>
+  <span class="name">Get the Item Count and compare with expected &quot;14&quot;</span>
   
   <span class="lead-duration duration">000ms</span>
 
@@ -325,7 +470,7 @@ $(document).ready(function() {
         
 <div class="brief passed">
   <span class="keyword indention">Then</span>
-  <span class="name">Get the Page Index</span>
+  <span class="name">Get the Page Count and compare with expected &quot;5&quot;</span>
   
   <span class="lead-duration duration">000ms</span>
 
@@ -334,6 +479,116 @@ $(document).ready(function() {
         
 
 
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">Get the Page Item Count and compare with Expected Result</span>
+  
+  <span class="lead-duration duration">001ms</span>
+
+  </div>
+
+        
+
+
+                  <table class="step-arguments">
+                          <tr>
+                                  <td>Page Item Count</td>
+                                  <td>Expected Result</td>
+                              </tr>
+                          <tr>
+                                  <td>0</td>
+                                  <td>3</td>
+                              </tr>
+                          <tr>
+                                  <td>1</td>
+                                  <td>3</td>
+                              </tr>
+                          <tr>
+                                  <td>2</td>
+                                  <td>3</td>
+                              </tr>
+                          <tr>
+                                  <td>3</td>
+                                  <td>3</td>
+                              </tr>
+                          <tr>
+                                  <td>4</td>
+                                  <td>2</td>
+                              </tr>
+                          <tr>
+                                  <td>5</td>
+                                  <td>-1</td>
+                              </tr>
+                          <tr>
+                                  <td>-1</td>
+                                  <td>-1</td>
+                              </tr>
+                      </table>
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">Get the Page Index&gt; and compare the Expected Page Index</span>
+  
+  <span class="lead-duration duration">001ms</span>
+
+  </div>
+
+        
+
+
+                  <table class="step-arguments">
+                          <tr>
+                                  <td>Page Index</td>
+                                  <td>Expected Page Index</td>
+                              </tr>
+                          <tr>
+                                  <td>5</td>
+                                  <td>1</td>
+                              </tr>
+                          <tr>
+                                  <td>2</td>
+                                  <td>0</td>
+                              </tr>
+                          <tr>
+                                  <td>20</td>
+                                  <td>-1</td>
+                              </tr>
+                          <tr>
+                                  <td>-10</td>
+                                  <td>-1</td>
+                              </tr>
+                          <tr>
+                                  <td>10</td>
+                                  <td>3</td>
+                              </tr>
+                          <tr>
+                                  <td>13</td>
+                                  <td>4</td>
+                              </tr>
+                          <tr>
+                                  <td>100</td>
+                                  <td>-1</td>
+                              </tr>
+                      </table>
         
         
 
