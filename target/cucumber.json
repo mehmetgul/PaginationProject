@@ -1,0 +1,98 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-09-10T02:06:06.465Z",
+        "line": 3,
+        "name": "Verify the pagination function as expected",
+        "description": "",
+        "id": "verify-the-pagination;verify-the-pagination-function-as-expected",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 58712000,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Use the List of Content pagination and Number of Item each page",
+            "match": {
+              "location": "assessment.stepDef.PaginationSteps.useTheListOfContentPaginationAndNumberOfItemEachPage(io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "List of Content",
+                  "Number of Item each page"
+                ]
+              },
+              {
+                "cells": [
+                  "abcdef",
+                  "4"
+                ]
+              }
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 5637000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Get the Item Count",
+            "match": {
+              "location": "assessment.stepDef.PaginationSteps.getTheItemCount()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 682000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Get the Page Count",
+            "match": {
+              "location": "assessment.stepDef.PaginationSteps.getThePageCount()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 853000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Get the Page Item Count",
+            "match": {
+              "location": "assessment.stepDef.PaginationSteps.getPageTheItemCount()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 883000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Get the Page Index",
+            "match": {
+              "location": "assessment.stepDef.PaginationSteps.getThePageIndex()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Verify the pagination",
+    "description": "",
+    "id": "verify-the-pagination",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/PaginationTesting.feature",
+    "tags": []
+  }
+]
