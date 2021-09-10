@@ -33,13 +33,13 @@ public class PaginationSteps {
 		new PaginationHelperTest().getPageCount(Integer.parseInt(pageCount));
 	}
 
-	@Then("Get the Page Item Count and compare with Expected Result")
+	@Then("Get the Page Index and compare with Item Count")
 	public void getTheAndCompareWith(DataTable dataTable) {
 		logger.info("==== Getting page item count ====...");
 		new PaginationHelperTest().getPageItemCount(dataTable);
 	}
 
-	@Then("Get the Page Index> and compare the Expected Page Index")
+	@Then("Get the Item Index and compare the Expected Page Index")
 	public void getTheAndCompareThe(DataTable dataTable) {
 		logger.info("==== Getting page index ====...");
 		new PaginationHelperTest().getPageIndex(dataTable);
